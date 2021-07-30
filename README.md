@@ -5,6 +5,7 @@
 
 - CREATE
   - Can create a user instance with 4 items:
+    - Full name
     - Email
     - Username
     - Company_id
