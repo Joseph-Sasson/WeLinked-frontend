@@ -1,0 +1,18 @@
+.change-button {
+  font-size: 15px;
+  position: absolute;
+  right: 450px;
+  width: 200px;
+  height: 120px;
+  cursor: pointer;
+}
+
+#header {
+  list-style-type: none;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.account-list {
+  margin: 25px;
+}
