@@ -4,7 +4,7 @@
   - `A user belongs to a company and a company has many users.`
 
 - CREATE
-  - Can create a user instance with 4 items:
+  - Can create a user instance with 5 items:
     - Full name
     - Email
     - Username
@@ -18,8 +18,8 @@
 
 - UPDATE
   - Can update a users password.
-  - Can update a users username
+  - Can update a users username.
   - Can update a users company_id.
 
 - DELETE
-  - Can delete a single user
+  - Can delete a single user.
