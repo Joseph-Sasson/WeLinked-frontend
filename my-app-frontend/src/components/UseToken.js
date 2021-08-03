@@ -6,7 +6,8 @@ function useToken() {
     const userToken = JSON.parse(tokenString);
     return userToken?.token
   };
-  const [token, setToken] = useState();
+
+  const [token, setToken] = useState(getToken());
 
   const saveToken = userToken => {
     sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -17,7 +18,6 @@ function useToken() {
     setToken: saveToken,
     token
   }
-
 }
 
 export default useToken
