@@ -6,19 +6,11 @@ import Login from "./components/Login";
 import SignUp from "./components/Signup";
 import Account from './components/Account';
 import Home from './components/Home';
-import useToken from './components/UseToken';
 
 function App() {
-  const { token, setToken } = useToken();
-  const [userData, setUserData] = useState()
+  const [login, setLogin] = useState(false)
 
-  useEffect(()=>{
-    fetch('http://localhost:9292/users')
-    .then(res=>res.json())
-    .then(setUserData)
-  },[])
-
-  if(!token) {
+  if(!login) {
   return (<Router>
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -41,8 +33,8 @@ function App() {
         <div className="auth-inner">
           <Switch>
             <Route path="/sign-up" component={SignUp} />
-            <Route path="/sign-in" component={()=><Login setToken={setToken}/>} />
-            <Route path='/' component={()=><Login setToken={setToken}/>} />
+            <Route path="/sign-in" component={()=><Login login = {setLogin} />} />
+            <Route path='/' component={()=><Login login = {setLogin} />} />
           </Switch>
         </div>
       </div>
@@ -70,9 +62,9 @@ return (<Router>
     <div className="auth-wrapper">
       <div className="auth-inner">
         <Switch>
-          <Route path="/account" component={()=><Account data={userData} />} />
-          <Route path="/home" component={()=><Home data={userData} />} />
-          <Route path='/' component={()=><Home data={userData} />} />
+          <Route path="/account" component={()=><Account />} />
+          <Route path="/home" component={()=><Home />} />
+          <Route path='/' component={()=><Home />} />
         </Switch>
       </div>
     </div>

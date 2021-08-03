@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import '../App.css';
 
 
-function Home({data}) {
+function Home() {
   const [search, setSearch] = useState('')
 
   function onSearchChange (e){

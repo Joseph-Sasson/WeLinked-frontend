@@ -1,13 +1,8 @@
 import React from 'react';
 import '../App.css';
 
-function Account({data}) {
+function Account() {
 
-  const name = data.map(userData=>{return userData.name })
-  const username = data.map(userData=>{return userData.username })
-  const company = data.map(userData=>{return userData.company_id })
-  const email = data.map(userData=>{return userData.company_name })
-  const password = data.map(userData=>{return userData.password })
 
   const handleDelete = (userId) =>{
     if (window.confirm("Are you sure you want to delete this account?"))
@@ -19,19 +14,19 @@ function Account({data}) {
     <>
       <h2 id = 'header'>Account Information</h2>
       <ul className = 'account-info' >
-        <li className = 'account-list'>Name: {name}
+        <li className = 'account-list'>Name:
           <span className = 'change-button'>Change</span>
         </li>
-        <li className = 'account-list'>Username: {username}
+        <li className = 'account-list'>Username:
           <span className = 'change-button'>Change</span>
         </li>
-        <li className = 'account-list'>Company Name: {company}
+        <li className = 'account-list'>Company Name:
           <span className = 'change-button'>Change</span>
         </li>
-        <li className = 'account-list'>Email Address: {email}
+        <li className = 'account-list'>Email Address:
           <span className = 'change-button'>Change</span>
         </li>
-        <li className = 'account-list'>Password: {password}
+        <li className = 'account-list'>Password:
           <span className = 'change-button'>Change</span>
         </li>
       </ul>
