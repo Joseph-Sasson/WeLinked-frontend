@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -10,6 +10,12 @@ import useToken from './components/UseToken';
 
 function App() {
   const { token, setToken } = useToken();
+
+  useEffect(()=>{
+    fetch('http://localhost:9292/users')
+    .then(res=>res.json())
+    .then(console.log)
+  })
 
   if(!token) {
   return (<Router>
