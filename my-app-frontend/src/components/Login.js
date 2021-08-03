@@ -21,7 +21,7 @@ function Login ({login}){
         .then(res=>res.json())
         .then(data=>{
           if (data.error){
-            console.log(data.error)}
+            alert(data.error)}
             else
             {login(true)
               history.push('/home')}
