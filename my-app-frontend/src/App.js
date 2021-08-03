@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -10,12 +10,13 @@ import useToken from './components/UseToken';
 
 function App() {
   const { token, setToken } = useToken();
+  const [userData, setUserData] = useState()
 
   useEffect(()=>{
     fetch('http://localhost:9292/users')
     .then(res=>res.json())
-    .then(console.log)
-  })
+    .then(setUserData)
+  },[])
 
   if(!token) {
   return (<Router>
@@ -69,9 +70,9 @@ return (<Router>
     <div className="auth-wrapper">
       <div className="auth-inner">
         <Switch>
-          <Route path="/account" component={Account} />
-          <Route path="/home" component={Home} />
-          <Route path='/' component={Home} />
+          <Route path="/account" component={()=><Account data={userData} />} />
+          <Route path="/home" component={()=><Home data={userData} />} />
+          <Route path='/' component={()=><Home data={userData} />} />
         </Switch>
       </div>
     </div>
