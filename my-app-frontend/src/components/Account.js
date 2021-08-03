@@ -1,7 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import '../App.css';
 
 function Account() {
+
   return(
     <>
       <h2 id = 'header'>Account Information</h2>
