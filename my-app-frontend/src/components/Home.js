@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
+import '../App.css';
+
 
 function Home() {
+  const [search, setSearch] = useState('')
+
+  function onSearchChange (e){
+    setSearch(e.target.value)
+  }
+
+  
   return(
-    <h2>Home</h2>
+    <>
+      <h2 id = 'header'>Home</h2>
+      <input type="text" name="search" placeholder="Search..." onChange={onSearchChange} value={search}/>
+    </>
   );
 }
 

@@ -1,30 +1,32 @@
 import React, {useState} from "react";
-import PropTypes from 'prop-types';
+import { useHistory } from "react-router-dom";
 
-async function loginUser(credentials) {
-    return fetch('http://localhost:8080/sign-in', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
-    })
-      .then(data => data.json())
-   }
 
-function Login ({setToken}){
+function Login ({login}){
 
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const history = useHistory()
 
-    const handleSubmit = async e => {
+    const handleSubmit = e => {
         e.preventDefault();
-        const token = await loginUser({
-          email,
-          password
-        });
-        setToken(token);
-      }
+        const loginData = {email, password}
+        fetch('http://localhost:9292/sign-in', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(loginData)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          if (data.error){
+            alert(data.error)}
+            else
+            {login(true)
+              history.push('/home')}
+        })
+    }
 
     return (
         <form onSubmit={handleSubmit}>
@@ -53,9 +55,5 @@ function Login ({setToken}){
             </p>
         </form>
     )}
-
-    Login.propTypes = {
-        setToken: PropTypes.func.isRequired
-      }
 
     export default Login
