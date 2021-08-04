@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 
-function SignUp () {
+function SignUp ({users, setUsers}) {
 
-    const history = useHistory()
+    const history = useHistory();  
 
     const [formData, setFormData] = useState({
         name: '',
@@ -11,7 +11,8 @@ function SignUp () {
         company: '',
         email: '',
         password: ''
-    })
+    });
+
     const [submittedData, setSubmittedData] = useState([]);
 
     const handleChange = (e)=>{
@@ -21,26 +22,36 @@ function SignUp () {
             ...formData, [name]:value
     })}
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault()
         const newForm = {
             name: formData.name,
             username: formData.username,
-            company: formData.company,
+            "company_name": formData.company,
             email: formData.email,
             password: formData.password
         }
-        const dataArray = [...submittedData, newForm]
-        setSubmittedData(dataArray)
-        setFormData({
-            name: '',
-            username: '',
-            company: '',
-            email: '',
-            password: ''
-    })
-    history.push('/sign-in')
-}
+        
+        const res = await fetch('http://localhost:9292/users', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json'
+            },
+            body: JSON.stringify(newForm)
+              })
+              const parsedBody = await res.json();
+              setUsers([...users, parsedBody]);
+              history.push('/sign-in')
+        // const dataArray = [...submittedData, newForm]
+        // setSubmittedData(dataArray)
+        // setFormData({
+        //     name: '',
+        //     username: '',
+        //     company: '',
+        //     email: '',
+        //     password: ''
+    }
 
 
     return (

@@ -10,7 +10,7 @@ import Home from './components/Home';
 function App() {
   const [login, setLogin] = useState(false)
   const [user, setUser] = useState('')
-  const [users, setUsers] = useState('')
+  const [users, setUsers] = useState([])
 
   
   useEffect(()=>{
