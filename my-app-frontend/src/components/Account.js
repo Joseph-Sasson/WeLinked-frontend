@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../App.css';
 
 function Account() {
-  const [name, setName] = useState("")
-  const [userName, setUserName] = useState("")
-  const [companyName, setCompanyName] = useState("")
-  const [emailAddress, setEmailAddress] = useState("")
-  const [password, setPassword] = useState("")
+  
   
 useEffect(() => {
   fetch()
@@ -27,8 +23,7 @@ useEffect(() => {
       <ul className = 'account-info' >
         <li className = 'account-list'>Name:
           <span className = 'change-button' 
-          value=""
-          onChange=""
+          
           onClick={() => console.log("Im clicked")}>Change</span>
         </li>
         <li className = 'account-list'>Username:
