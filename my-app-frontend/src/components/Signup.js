@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 
-function SignUp () {
+function SignUp ({users, setUsers}) {
 
     const history = useHistory()
 
