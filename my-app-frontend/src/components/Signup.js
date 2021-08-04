@@ -38,7 +38,9 @@ function SignUp () {
             company: '',
             email: '',
             password: ''
-    })}
+    })
+    history.push('/sign-in')
+}
 
 
     return (
