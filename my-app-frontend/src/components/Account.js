@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import '../App.css';
 
 function Account({user}) {
@@ -35,7 +35,7 @@ function Account({user}) {
         <li className = 'account-list'>Password:
           <input className = 'password-form'
           type={isRevealPwd ? "text" : "password"}
-          value = {user.password}/>
+          defaultValue = {user.password}/>
           <i onClick={() => setIsRevealPwd(!isRevealPwd)}>Show Password</i>
           <span className = 'change-button'>Change</span>
         </li>
