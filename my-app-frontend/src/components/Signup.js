@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 function SignUp ({users, setUsers}) {
 
-    const history = useHistory()
+    const history = useHistory();  
 
     const [formData, setFormData] = useState({
         name: '',
@@ -11,7 +11,8 @@ function SignUp ({users, setUsers}) {
         company: '',
         email: '',
         password: ''
-    })
+    });
+
     const [submittedData, setSubmittedData] = useState([]);
 
     const handleChange = (e)=>{
