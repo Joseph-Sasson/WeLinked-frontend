@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../App.css';
 
 function Account() {
 
+  
 
   const handleDelete = (userId) =>{
     if (window.confirm("Are you sure you want to delete this account?"))
