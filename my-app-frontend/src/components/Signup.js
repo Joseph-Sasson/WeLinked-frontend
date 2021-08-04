@@ -27,7 +27,7 @@ function SignUp ({users, setUsers}) {
         const newForm = {
             name: formData.name,
             username: formData.username,
-            company: formData.company,
+            "company_name": formData.company,
             email: formData.email,
             password: formData.password
         }
@@ -38,11 +38,11 @@ function SignUp ({users, setUsers}) {
               'Content-Type': 'application/json',
               Accept: 'application/json'
             },
-            body: JSON.stringify({newForm})
+            body: JSON.stringify(newForm)
               })
               const parsedBody = await res.json();
               setUsers([...users, parsedBody]);
-              history.push('/users')
+              history.push('/sign-in')
         // const dataArray = [...submittedData, newForm]
         // setSubmittedData(dataArray)
         // setFormData({
