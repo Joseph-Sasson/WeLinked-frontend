@@ -16,3 +16,10 @@
 .account-list {
   margin: 25px;
 }
+
+.password-form {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}

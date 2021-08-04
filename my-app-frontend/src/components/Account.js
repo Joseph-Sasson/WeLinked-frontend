@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import '../App.css';
 
 function Account({user}) {
+  const [isRevealPwd, setIsRevealPwd] = useState(false);
+
 
 
   const handleDelete = (userId) =>{
@@ -14,19 +16,27 @@ function Account({user}) {
     <>
       <h2 id = 'header'>Account Information</h2>
       <ul className = 'account-info' >
-        <li className = 'account-list'>Name: {user.name}
+        <li className = 'account-list'>Name:
+          <span> {user.name}</span>
           <span className = 'change-button'>Change</span>
         </li>
-        <li className = 'account-list'>Username: {user.username}
+        <li className = 'account-list'>Username:
+          <span> {user.username}</span>
           <span className = 'change-button'>Change</span>
         </li>
-        <li className = 'account-list'>Company Name: {user.company_name}
+        <li className = 'account-list'>Company Name:
+          <span> {user.company_name}</span>
           <span className = 'change-button'>Change</span>
         </li>
-        <li className = 'account-list'>Email Address: {user.email}
+        <li className = 'account-list'>Email Address:
+          <span> {user.email}</span>
           <span className = 'change-button'>Change</span>
         </li>
-        <li className = 'account-list'>Password: {user.password}
+        <li className = 'account-list'>Password:
+          <input className = 'password-form'
+          type={isRevealPwd ? "text" : "password"}
+          value = {user.password}/>
+          <i onClick={() => setIsRevealPwd(!isRevealPwd)}>Show Password</i>
           <span className = 'change-button'>Change</span>
         </li>
       </ul>
