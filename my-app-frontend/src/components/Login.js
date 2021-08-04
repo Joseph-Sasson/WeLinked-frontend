@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 
-
-function Login ({login}){
+function Login ({login, setUser}){
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -24,6 +23,7 @@ function Login ({login}){
             alert(data.error)}
             else
             {login(true)
+            setUser(data)
               history.push('/home')}
         })
     }

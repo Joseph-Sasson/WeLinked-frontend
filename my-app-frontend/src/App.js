@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -9,6 +9,7 @@ import Home from './components/Home';
 
 function App() {
   const [login, setLogin] = useState(false)
+  const [user, setUser] = useState('')
 
   if(!login) {
   return (<Router>
@@ -33,14 +34,16 @@ function App() {
         <div className="auth-inner">
           <Switch>
             <Route path="/sign-up" component={SignUp} />
-            <Route path="/sign-in" component={()=><Login login = {setLogin} />} />
-            <Route path='/' component={()=><Login login = {setLogin} />} />
+            <Route path="/sign-in" component={()=><Login login = {setLogin} setUser={setUser} />} />
+            <Route path='/' component={()=><Login login = {setLogin} setUser={setUser}/>} />
           </Switch>
         </div>
       </div>
     </div></Router>
   );
 }
+
+
 return (<Router>
   <div className="App">
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -62,7 +65,7 @@ return (<Router>
     <div className="auth-wrapper">
       <div className="auth-inner">
         <Switch>
-          <Route path="/account" component={()=><Account />} />
+          <Route path="/account" component={()=><Account user={user}/>} />
           <Route path="/home" component={()=><Home />} />
           <Route path='/' component={()=><Home />} />
         </Switch>
