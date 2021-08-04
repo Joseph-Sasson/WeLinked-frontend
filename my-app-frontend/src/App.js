@@ -9,7 +9,7 @@ import Home from './components/Home';
 
 function App() {
   const [login, setLogin] = useState(false)
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState({})
   const [users, setUsers] = useState([])
 
   
@@ -42,7 +42,7 @@ function App() {
         <div className="auth-wrapper">
           <div className="auth-inner">
             <Switch>
-              <Route path="/sign-up" component={()=><SignUp />} />
+              <Route path="/sign-up" component={()=><SignUp users = {users} setUsers = {setUsers}/>} />
               <Route path="/sign-in" component={()=><Login login = {setLogin} setUser={setUser} />} />
               <Route path='/' component={()=><Login login = {setLogin} setUser={setUser}/>} />
             </Switch>
