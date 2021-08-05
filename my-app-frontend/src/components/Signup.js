@@ -13,8 +13,6 @@ function SignUp ({users, setUsers}) {
         password: ''
     });
 
-    const [submittedData, setSubmittedData] = useState([]);
-
     const handleChange = (e)=>{
         const name = e.target.name
         const value = e.target.value
@@ -43,14 +41,6 @@ function SignUp ({users, setUsers}) {
               const parsedBody = await res.json();
               setUsers([...users, parsedBody]);
               history.push('/sign-in')
-        // const dataArray = [...submittedData, newForm]
-        // setSubmittedData(dataArray)
-        // setFormData({
-        //     name: '',
-        //     username: '',
-        //     company: '',
-        //     email: '',
-        //     password: ''
     }
 
 
