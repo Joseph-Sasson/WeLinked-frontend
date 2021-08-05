@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
 import '../App.css';
 
-function Account({user}) {
+function Account({user, setLogin}) {
   const [isRevealPwd, setIsRevealPwd] = useState(false);
 
 
 
-  const handleDelete = (userId) =>{
+  const handleDelete = () =>{
     if (window.confirm("Are you sure you want to delete this account?"))
-    console.log('account deleted')
-  }
+    fetch(`http://localhost:9292/users/${user.id}`, {
+      method: 'DELETE'},
+      setLogin(false))}
 
 
   return(

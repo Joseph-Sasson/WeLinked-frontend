@@ -78,7 +78,7 @@ function App() {
         <div className="auth-wrapper">
           <div className="auth-inner">
             <Switch>
-              <Route path="/account" component={()=><Account user={user}/>} />
+              <Route path="/account" component={()=><Account user={user} setLogin = {setLogin}/>} />
               <Route path="/home" component={()=><Home users={users}/>} />
               <Route path='/' component={()=><Home users={users}/>} />
             </Switch>
