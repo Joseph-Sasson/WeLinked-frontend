@@ -9,20 +9,20 @@ function Home({users}) {
     setSearch(e.target.value)
   }
 
-  // const searchDisplay = users.filter((user)=>{
-  //   return (user.company_name.toLowerCase().includes(search.toLowerCase()))
-  // })
+  const searchDisplay = users.filter((user)=>{
+    return (user.company.company_name.toLowerCase().includes(search.toLowerCase()))
+  })
 
   return(
     <>
       <h2 id = 'header'>Home</h2>
       <input type="text" name="search" placeholder="Search..." onChange={onSearchChange} value={search}/>
       <ul>
-        {/* {searchDisplay.map((user)=>(
+        {search !== '' && searchDisplay.map((user)=>(
           <li>
-            Company: {user.company_name}
+            Company: {user.company.company_name}
           </li>
-        ))} */}
+        ))}
       </ul>
     </>
   );

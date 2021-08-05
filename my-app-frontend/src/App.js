@@ -9,7 +9,7 @@ import Home from './components/Home';
 
 function App() {
   const [login, setLogin] = useState(false)
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({company:{}})
   const [users, setUsers] = useState([])
 
   

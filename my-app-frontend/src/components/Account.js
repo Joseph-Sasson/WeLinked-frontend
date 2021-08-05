@@ -6,7 +6,7 @@ function Account({user, setLogin}) {
   const [userForm, setUserForm] = useState({
     name: user.name,
     username: user.username,
-    company_id: user.company_id,
+    company_name: user.company.company_name,
     email: user.email,
     password: user.password
   })
@@ -59,8 +59,8 @@ function Account({user, setLogin}) {
         <li className = 'account-list'>Company Name:
         <input 
             type = 'text'
-            name = 'company_id'
-            value = {userForm.company_id}
+            name = 'company_name'
+            value = {userForm.company_name}
             onChange = {handleChange}
           />
         </li>
