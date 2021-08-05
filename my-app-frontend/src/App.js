@@ -76,7 +76,7 @@ function App() {
         </nav>
 
         <div className="auth-wrapper">
-          <div className="auth-inner">
+          <div className="auth-inners">
             <Switch>
               <Route path="/account" component={()=><Account user={user} setLogin = {setLogin}/>} />
               <Route path="/home" component={()=><Home users={users}/>} />

@@ -1,7 +1,5 @@
 .change-button {
-  font-size: 15px;
   float: right;
-  cursor: pointer;
 }
 
 #header {
@@ -11,7 +9,7 @@
 }
 
 .account-list {
-  margin: 25px;
+  margin: 15px;
 }
 
 .password-form {
