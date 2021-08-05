@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import '../App.css';
+import UserCard from './UserCard';
 
 
 function Home({users}) {
@@ -19,9 +20,7 @@ function Home({users}) {
       <input type="text" name="search" placeholder="Search..." onChange={onSearchChange} value={search}/>
       <ul>
         {search !== '' && searchDisplay.map((user)=>(
-          <li>
-            Company: {user.company.company_name}
-          </li>
+          <UserCard user = {user} />
         ))}
       </ul>
     </>

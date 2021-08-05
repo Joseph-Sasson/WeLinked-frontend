@@ -18,3 +18,10 @@
   resize: none;
   outline: none;
 }
+
+.user-card{
+  float: left;
+  margin: 2%;
+  padding: 1%;
+  outline: solid;
+}
