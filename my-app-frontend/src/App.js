@@ -9,7 +9,7 @@ import Home from './components/Home';
 
 function App() {
   const [login, setLogin] = useState(false)
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({company:{}})
   const [users, setUsers] = useState([])
 
   
@@ -76,13 +76,11 @@ function App() {
         </nav>
 
         <div className="auth-wrapper">
-          <div className="auth-inners">
             <Switch>
               <Route path="/account" component={()=><Account user={user} setLogin = {setLogin}/>} />
               <Route path="/home" component={()=><Home users={users}/>} />
               <Route path='/' component={()=><Home users={users}/>} />
             </Switch>
-          </div>
         </div>
       </div>
     </Router>

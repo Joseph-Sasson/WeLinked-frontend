@@ -89,8 +89,8 @@ body, html, .App, #root, .auth-wrapper {
 
 span.user-card{
   background: #ffffff;
+  border-radius: 15px;
 }
-
 .auth-wrapper h3 {
   text-align: center;
   margin: 0;

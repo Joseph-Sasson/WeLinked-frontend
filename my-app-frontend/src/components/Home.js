@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import '../App.css';
+import UserCard from './UserCard';
 
 
 function Home({users}) {
@@ -9,20 +10,20 @@ function Home({users}) {
     setSearch(e.target.value)
   }
 
-  // const searchDisplay = users.filter((user)=>{
-  //   return (user.company_name.toLowerCase().includes(search.toLowerCase()))
-  // })
+  const searchDisplay = users.filter((user)=>{
+    return (user.company.company_name.toLowerCase().includes(search.toLowerCase()))
+  })
 
   return(
     <>
+      <div className="auth-inners">
       <h2 id = 'header'>Home</h2>
       <input type="text" name="search" placeholder="Search..." onChange={onSearchChange} value={search}/>
+      </div>     
       <ul>
-        {/* {searchDisplay.map((user)=>(
-          <li>
-            Company: {user.company_name}
-          </li>
-        ))} */}
+        {search !== '' && searchDisplay.map((user)=>(
+          <UserCard user = {user} />
+        ))}
       </ul>
     </>
   );
