@@ -57,9 +57,6 @@ body, html, .App, #root, .auth-wrapper {
   background-position: 50%;
   height: 100%;
   background-blend-mode: saturation;
-  /* background-image:
-    linear-gradient(black, black), */
-  /* filter: grayscale(100%); */
 }
 
 .auth-inner {
@@ -87,6 +84,10 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 .btn-btn-primary-btn-block{
+  background: #ffffff;
+}
+
+span.user-card{
   background: #ffffff;
 }
 
