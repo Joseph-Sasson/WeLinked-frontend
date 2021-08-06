@@ -3,8 +3,10 @@
 * {
   box-sizing: border-box;
 }
+
+
 body {
-  background: #1C8EF9 !important;
+  background: #4abdff !important;
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -27,17 +29,43 @@ body, html, .App, #root, .auth-wrapper {
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
 }
 
+.navbar-brand {
+  overflow: hidden;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  padding: 10px 16px;
+  margin-right: auto;
+  text-decoration: none;
+  color: #3f4652;
+}
+
+.nav-link {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 12px 16px;
+}
+
 .auth-wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: left;
+  background-image:  url("https://media-public.canva.com/MABlBx9-NP0/1/screen_2x.jpg");
+  background-size: cover;
+  background-position: 50%;
+  height: 100%;
+  background-blend-mode: saturation;
+  /* background-image:
+    linear-gradient(black, black), */
+  /* filter: grayscale(100%); */
 }
 
 .auth-inner {
   width: 450px;
   margin: auto;
-  background: #ffffff;
+  background: #4abdff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
@@ -46,7 +74,7 @@ body, html, .App, #root, .auth-wrapper {
 
 .auth-inners {
   margin: auto;
-  background: #ffffff;
+  background: #4abdff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
@@ -54,8 +82,12 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 .auth-wrapper .form-control:focus {
-  border-color: #167bff;
+  border-color: #4abdff;
   box-shadow: none;
+}
+
+.btn-btn-primary-btn-block{
+  background: #ffffff;
 }
 
 .auth-wrapper h3 {
@@ -80,11 +112,11 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 .forgot-password a{
-  color: #167bff;
+  color: #4abdff;
 }
 
 .forgot-password span{
-  color: #167bff;
+  color: #4abdff;
   text-decoration: underline;
   cursor: pointer;
   box-sizing: border-box;
