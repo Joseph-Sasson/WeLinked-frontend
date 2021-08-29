@@ -38,7 +38,6 @@ function App() {
             </div>
           </div>
         </nav>
-
         <div className="auth-wrapper">
           <div className="auth-inner">
             <Switch>
@@ -74,7 +73,6 @@ function App() {
             </div>
           </div>
         </nav>
-
         <div className="auth-wrapper">
             <Switch>
               <Route path="/account" component={()=><Account user={user} setLogin = {setLogin}/>} />
