@@ -49,7 +49,7 @@ function Login ({login, setUser}){
                 </div>
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block">Submit</button>
+            <button type="submit" className="btn btn-primary btn-block">Login</button>
             <p className="forgot-password text-right">
             </p>
         </form>
