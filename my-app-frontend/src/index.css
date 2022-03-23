@@ -78,6 +78,10 @@ body, html, .App, #root, .auth-wrapper {
   transition: all .3s;
 }
 
+.form-group{
+  padding-bottom: 1rem;
+}
+
 .auth-wrapper .form-control:focus {
   border-color: #4abdff;
   box-shadow: none;
