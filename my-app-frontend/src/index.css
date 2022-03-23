@@ -123,3 +123,7 @@ span.user-card{
   font-weight: 900;
   font-size: larger;
 }
+
+.password-pointer{
+  cursor: pointer;
+}

@@ -82,7 +82,7 @@ function Account({user, setLogin}) {
           onChange = {handleChange}
           />
           <br/>
-          <i onClick={() => setIsRevealPwd(!isRevealPwd)}>Show Password</i>
+          <i className="password-pointer" onClick={() => setIsRevealPwd(!isRevealPwd)}>Show Password</i>
         </li>
 
       </ul>
