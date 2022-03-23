@@ -75,7 +75,7 @@ function SignUp ({users, setUsers}) {
 
             <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
             <p className="forgot-password text-right">
-                Already Registered <span onClick={()=>history.push('/sign-in')} className="forgot-password text-right">Sign In?</span>
+                <span onClick={()=>history.push('/sign-in')} className="forgot-password text-right">Already Registered?</span>
             </p>
         </form>
     )}

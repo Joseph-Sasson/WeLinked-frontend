@@ -30,7 +30,7 @@ function Login ({login, setUser}){
 
     return (
         <form onSubmit={handleSubmit}>
-            <h3>Sign In</h3>
+            <h3>Login</h3>
 
             <div className="form-group">
                 <label>Email Address</label>
